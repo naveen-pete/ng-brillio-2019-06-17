@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root',                // required
+  templateUrl: './app.component.html', // required, external template
+  styleUrls: ['./app.component.css']   // optional, external stylesheets
 })
 export class AppComponent {
-  title = 'store-app';
 }
