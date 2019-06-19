@@ -1,0 +1,15 @@
+<h2>Products</h2>
+
+<div class="card bg-light m-3">
+  <h4 class="card-header">{{ productName | uppercase }}</h4>
+  <div class="card-body">
+    <p class="card-text">{{ productDescription }}</p>
+    <p class="card-text"><strong>Price:</strong> <em>{{ productPrice | currency : 'INR' : 'symbol' }}</em></p>
+    <p class="card-text"><strong>Available?</strong> <em>{{ productIsAvailable ? 'Yes' : 'No' }}</em></p>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-warning btn-sm">
+      Delete
+    </button>
+  </div>
+</div>
