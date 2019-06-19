@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Product } from '../models/product';
 
@@ -8,16 +8,16 @@ import { Product } from '../models/product';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  product: Product = {
-    name: 'abc',
-    description: 'def',
-    price: 10,
-    isAvailable: false
-  };
+  @Input() product: Product = new Product();
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
+
+// built-in (html)
+// <input [value]="productName" >
+
+// custom (angular)
+// <app-product-detail [product]="p" ></app-product-detail>
