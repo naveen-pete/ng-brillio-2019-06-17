@@ -1,29 +1,27 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Product } from '../models/product';
 import { LoggerService } from '../services/logger.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
-  styleUrls: ['./product-form.component.css'],
-  providers: [LoggerService]
+  styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent implements OnInit {
-  @Output() productCreated: EventEmitter<Product> = new EventEmitter<Product>();
-
+export class ProductFormComponent {
   product: Product = new Product();
   showMessage: boolean = false;
 
-  constructor(private loggerService: LoggerService) { }
-
-  ngOnInit() {
-  }
+  constructor(
+    private loggerService: LoggerService,
+    private productsService: ProductsService
+  ) { }
 
   onSubmit() {
     this.loggerService.log('Form submitted.');
 
-    this.productCreated.emit(this.product);
+    this.productsService.addProduct(this.product);
     this.product = new Product();
     this.showMessage = true;
 
