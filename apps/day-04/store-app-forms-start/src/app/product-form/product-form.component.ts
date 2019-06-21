@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ProductFormComponent implements OnInit {
   showMessage = false;
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

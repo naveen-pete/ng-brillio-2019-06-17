@@ -16,4 +16,4 @@ import { CustomerFormComponent } from './customer-form/customer-form.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
