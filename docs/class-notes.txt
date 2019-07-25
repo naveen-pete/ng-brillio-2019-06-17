@@ -1,0 +1,180 @@
+community.simplilearn.com
+faculty.lms.simplilearn.com
+
+
+https://simplilearnsolutions.webex.com/simplilearnsolutions/j.php?MTID=mb34481d27f6007773d71f92035abf27a
+
+What is Angular?
+* Used for front end development - Sujay
+* Platform that makes it easy to build applications with the web - Rohit
+* Angular is javascript based open source used to build web applications. - Swapna
+* Used for building mobile and web appllications - Rumaisa
+* React
+* Venila.js
+
+Multiple pages
+1. Home page - <Html> </Html>
+2. Orders page - <Html> </Html>
+3. Products page - <Html> </Html>
+
+Single Page Apps
+- One web page (html) - index.html 
+  <html>
+	<head>
+	</head>
+	<body>
+		<!-- place to show different components based on user interaction -->
+		
+		<orders></orders>
+	</body>
+  </html>
+- Home - component
+- Orders - component
+- Products - component 
+
+Component? - Search component
+- HTML code - .html - <input> <select> <button>
+- Style - .css
+- Data - property on a class - TypeScript - .ts
+- Behavior - method on a class 
+
+Bootstrap 
+- library of pre-defined styles
+- Twitter
+- 1. CDN - Content Delivery Network
+- 2. Setting up Bootstrap locally within your app
+
+Product Management
+products.ts
+- variables
+- classes
+- functions
+- interfaces
+
+Customer Management
+customers.ts
+- variables
+- classes
+- functions
+- interfaces
+
+Bootstrapping Angular App
+- ng serve
+1. transpile (convert) ts code to js code - main.js
+2. hosts web app into a web server -  Angular Live Development Server
+3. start the web server 
+
+Model - data
+
+Controller - synchronize model and view
+
+View - displays data from model
+
+Pipes 
+- used to format data
+- can be built-in (or) custom
+
+Directives 
+- used to extend html elements / add new functionality to existing html elements
+- can be built-in (or) custom 
+- can be classified into 2 types
+	1. Attribute directives - e.g. ngClass, ngStyle, ngModel
+	2. Structural directives - e.g. *ngFor, *ngIf, *ngSwitch
+
+component
+ - gets created
+ - exists for sometime
+ - gets destroyed
+ 
+ 
+               app (store-app)
+
+     header               products (array of products)
+	 
+	           product-form     product-detail  (showing single product information)
+               (new product)
+			   
+------------------------------------------------------------------
+			   app (lifecycle-hooks-app) (array of servers)
+			   
+	server-form     server-detail (one server)
+	(new server)
+			   
+			   
+<app-product-detail [product]="p" *ngFor="let p of products"></app-product-detail>
+
+<app-server-detail *ngFor="let server of servers" [name]="server.name">
+	<p>
+	  <strong style="color: blue">{{ server.content }}</strong>
+	</p>
+</app-server-detail>
+
+---------------------------------------
+
+ProductManagementModule
+QuickLookComponent
+- Seller, Name, Price, Rating, Image
+- json - url - REST api
+- ngOnInit()
+- ProductService.getProduct(1)
+
+ProductDetailComponent
+- Seller, Name, Price, Rating, Image, plus some additional information
+- ProductService.getProduct(1)
+
+ShoppingCartModule
+ShoppingCartComponent
+- Seller, Name, Price, Rating, Image
+- ProductService.getProduct(1)
+
+OrdersModule
+OrdersComponent
+- Seller, Name, Price, Rating, Image
+- ProductService.getProduct(1)
+
+
+2019 - https://amazon.co.in/products/1
+2021 - https://amazon.co.in/api/products/1
+
+Design aspects
+- SRP
+
+    Compnent    Service 
+
+
+ProductsService
+- https://amazon.co.in/products/1
+- common logic 
+- exposes methods
+- getProduct(id)
+
+Dependency Injection (DI)
+
+
+Arrays - Reference types
+
+Browser
+- url - map to - component
+
+http://localhost:4200/ - Home component - route
+http://localhost:4200/products - Products component - route
+http://localhost:4200/customers - Customers component - route 
+
+Form / FormControl properties
+- controls - Object that contain form controls
+- errors - Object that contains error information
+- valid & invalid - boolean
+- pristine & dirty - boolean
+- touched & untouched - boolean
+- value - Object that holds the form data
+
+Async Code
+- Callback
+  setTimeout(callback, duration)
+  activatedRoute.paramMap.subscribe(callback`)
+  
+  - callback hell
+  
+- ES2015/ES6 - Promise
+
+- Angular (RxJS) - Observables
